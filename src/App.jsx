@@ -1,12 +1,17 @@
-import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
 
 function App() {
   return (
-    <main>
-      <p>Atendimento de verdade</p>
-      <h1>Sua Empresa</h1>
-      <p>Um site pronto para mostrar o melhor da sua empresa.</p>
-    </main>
+    <>
+      <Header />
+
+      <main>
+        <Hero />
+        <Services />
+      </main>
+    </>
   );
 }
 

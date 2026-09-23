@@ -1,0 +1,79 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+  width: min(calc(100% - 3rem), 1180px);
+  margin: 0 auto;
+  padding: 5.5rem 0 6.5rem;
+}
+
+.hero-content {
+  max-width: 34rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.hero-text {
+  max-width: 33rem;
+  margin: 1.5rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.primary-button {
+  padding: 1rem 1.2rem;
+  color: white;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.primary-button:hover {
+  background: var(--accent-dark);
+}
+
+.secondary-link {
+  color: var(--forest);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.secondary-link:hover {
+  color: var(--accent);
+}
+
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+}
