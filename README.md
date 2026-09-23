@@ -1,3 +1,6 @@
+# Landing-page
+Template modular de site para empresas locais, adaptável para lojas, restaurantes, prestadores de serviço e profissionais autônomos.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
