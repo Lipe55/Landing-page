@@ -1,3 +1,4 @@
+import "./Hero.css";
 
 function Hero() {
   return (
@@ -22,8 +23,6 @@ function Hero() {
           </a>
         </div>
       </div>
-
-
     </section>
   );
 }
