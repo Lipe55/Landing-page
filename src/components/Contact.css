@@ -44,7 +44,7 @@
 }
 
 .contact-details {
-  border-top: 1px solid rgba(23, 54, 42, 0.18);
+  border-top: 1px solid var(--border);
 }
 
 .contact-detail {
@@ -52,7 +52,7 @@
   flex-direction: column;
   gap: 0.45rem;
   padding: 1.55rem 0;
-  border-bottom: 1px solid rgba(23, 54, 42, 0.18);
+  border-bottom: 1px solid var(--border);
 }
 
 .contact-detail span {

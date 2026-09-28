@@ -1,7 +1,7 @@
 import { services } from "../data/services";
 import "./Services.css";
 
-function Services() {
+function Services({ onSelectService }) {
   return (
     <section className="services" id="servicos">
       <div className="services-inner">
@@ -26,8 +26,11 @@ function Services() {
 
               <p>{service.description}</p>
 
-              <a className="service-link" href="#contato">
-                Saiba mais <span aria-hidden="true">→</span>
+              <a
+                href="#orcamento"
+                onClick={() => onSelectService(service.title)}
+              >
+                Saiba mais →
               </a>
             </article>
           ))}

@@ -17,14 +17,18 @@ function Header() {
           <a href="#contato">Contato</a>
         </nav>
 
-        <a
-          className="header-cta"
-          href={contactContent.whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Falar no WhatsApp
-        </a>
+        <div className="header-actions">
+
+
+          <a
+            className="header-cta"
+            href={contactContent.whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
       </div>
     </header>
   );

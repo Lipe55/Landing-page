@@ -1,0 +1,113 @@
+.quote {
+  background: var(--quote-surface);
+}
+
+.quote-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+  width: min(calc(100% - 3rem), 1180px);
+  margin: 0 auto;
+  padding: 6.5rem 0;
+}
+
+.quote-copy h2 {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.quote-description {
+  max-width: 31rem;
+  margin: 1.8rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(22, 56, 43, 0.12);
+  background: var(--card);
+  box-shadow: 0 18px 32px rgba(22, 56, 43, 0.12);
+}
+
+.quote-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quote-field span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  outline: none;
+  color: var(--ink);
+  background: var(--field);
+}
+
+.quote-field input::placeholder,
+.quote-field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(189, 89, 69, 0.16);
+}
+
+.quote-field textarea {
+  min-height: 116px;
+}
+
+.quote-button {
+  grid-column: 1 / -1;
+  padding: 1rem 1.2rem;
+  border: 0;
+  color: white;
+  background: var(--accent);
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.quote-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 760px) {
+  .quote-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4.5rem 0;
+  }
+
+  .quote-form {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .quote-button {
+    grid-column: auto;
+  }
+}
