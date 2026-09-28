@@ -26,7 +26,9 @@ function Services() {
 
               <p>{service.description}</p>
 
-              <a href="#contato">Saiba mais →</a>
+              <a className="service-link" href="#contato">
+                Saiba mais <span aria-hidden="true">→</span>
+              </a>
             </article>
           ))}
         </div>

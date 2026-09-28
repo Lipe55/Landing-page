@@ -1,5 +1,6 @@
 :root {
   --paper: #f7f3eb;
+  --surface: #e7ebe2;
   --ink: #17362a;
   --muted: #65736a;
   --forest: #163d2c;
@@ -17,12 +18,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
   background: var(--paper);
 }
 
@@ -31,6 +33,26 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
 #root {
   min-height: 100vh;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }

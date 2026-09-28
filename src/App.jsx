@@ -1,7 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
 import About from "./components/About";
+import Services from "./components/Services";
+import Location from "./components/Location";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -10,8 +12,10 @@ function App() {
 
       <main>
         <Hero />
-        <About /> 
+        <About />
         <Services />
+        <Location />
+        <Contact />
       </main>
     </>
   );

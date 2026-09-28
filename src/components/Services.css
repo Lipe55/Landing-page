@@ -1,65 +1,67 @@
 .services {
-  padding: 6rem 0;
-  background: #e4e8df;
+  background: var(--surface);
 }
 
 .services-inner {
   width: min(calc(100% - 3rem), 1180px);
   margin: 0 auto;
+  padding: 6.5rem 0;
 }
 
 .services-heading {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
   align-items: end;
-  gap: 4rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .services h2 {
-  max-width: 12ch;
+  max-width: 38rem;
   margin: 0;
   color: var(--ink);
   font-family: Georgia, serif;
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
   line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .services-intro {
-  max-width: 32rem;
+  max-width: 28rem;
   margin: 0;
   color: var(--muted);
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.4rem;
 }
 
 .service-card {
   display: flex;
-  min-height: 270px;
   flex-direction: column;
-  padding: 1.75rem;
-  background: white;
-  box-shadow: 0 12px 28px rgba(23, 54, 42, 0.08);
+  min-height: 280px;
+  padding: 2rem;
+  background: #ffffff;
 }
 
 .service-number {
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 .service-card h3 {
-  margin: 2rem 0 0.75rem;
+  max-width: 15rem;
+  margin: 2.2rem 0 1rem;
   color: var(--ink);
   font-family: Georgia, serif;
-  font-size: 1.6rem;
-  line-height: 1.1;
+  font-size: 1.75rem;
+  line-height: 1.05;
 }
 
 .service-card p {
@@ -68,30 +70,36 @@
   line-height: 1.65;
 }
 
-.service-card a {
+.service-link {
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   color: var(--forest);
   font-size: 0.9rem;
   font-weight: 700;
 }
 
-.service-card a:hover {
+.service-link:hover {
   color: var(--accent);
 }
 
-@media (max-width: 760px) {
-  .services {
-    padding: 4.5rem 0;
-  }
-
-  .services-heading,
+@media (max-width: 860px) {
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .service-card {
-    min-height: 230px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .services-inner {
+    padding: 4.5rem 0;
+  }
+
+  .services-heading {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 }

@@ -1,3 +1,4 @@
+import { contactContent } from "../data/Contact";
 import "./Hero.css";
 
 function Hero() {
@@ -9,12 +10,17 @@ function Hero() {
         <h1>Sua empresa sempre ao seu lado.</h1>
 
         <p className="hero-text">
-          Mais do que um serviço, oferecemos uma experiência completa,
-          com cuidado, atenção e foco no que realmente importa: você.
+          Mais do que um serviço, oferecemos uma experiência completa, com
+          cuidado, atenção e foco no que realmente importa: você.
         </p>
 
         <div className="hero-actions">
-          <a className="primary-button" href="#contato">
+          <a
+            className="primary-button"
+            href={contactContent.whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+          >
             Falar no WhatsApp
           </a>
 

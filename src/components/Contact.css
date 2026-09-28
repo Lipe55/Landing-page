@@ -1,0 +1,84 @@
+.contact {
+  background: var(--paper);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  width: min(calc(100% - 3rem), 1180px);
+  margin: 0 auto;
+  padding: 6.5rem 0;
+}
+
+.contact-copy h2 {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.contact-description {
+  max-width: 35rem;
+  margin: 1.8rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  color: white;
+  background: var(--accent);
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.contact-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.contact-details {
+  border-top: 1px solid rgba(23, 54, 42, 0.18);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.55rem 0;
+  border-bottom: 1px solid rgba(23, 54, 42, 0.18);
+}
+
+.contact-detail span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-detail strong {
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.contact-button:focus-visible {
+  outline: 3px solid #7aa48f;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4.5rem 0;
+  }
+}
