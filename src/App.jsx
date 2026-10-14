@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
+import Projects from "./components/Projects";
 import Quote from "./components/Quote";
 import Location from "./components/Location";
 import Contact from "./components/Contact";
@@ -18,7 +19,11 @@ function App() {
         <Hero />
         <About />
         <Services onSelectService={setSelectedService} />
-        <Quote selectedService={selectedService} />
+        <Projects />
+        <Quote
+          selectedService={selectedService}
+          onSelectService={setSelectedService}
+        />
         <Location />
         <Contact />
       </main>

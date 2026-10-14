@@ -1,4 +1,4 @@
-import { services } from "../data/services";
+import { services, servicesContent } from "../data/services";
 import "./Services.css";
 
 function Services({ onSelectService }) {
@@ -7,14 +7,11 @@ function Services({ onSelectService }) {
       <div className="services-inner">
         <div className="services-heading">
           <div>
-            <p className="eyebrow">Nossos serviços</p>
-            <h2>Soluções para o seu dia a dia.</h2>
+            <p className="eyebrow">{servicesContent.eyebrow}</p>
+            <h2>{servicesContent.title}</h2>
           </div>
 
-          <p className="services-intro">
-            Oferecemos soluções pensadas para atender você com praticidade,
-            qualidade e um atendimento próximo.
-          </p>
+          <p className="services-intro">{servicesContent.description}</p>
         </div>
 
         <div className="services-grid">
@@ -30,7 +27,7 @@ function Services({ onSelectService }) {
                 href="#orcamento"
                 onClick={() => onSelectService(service.title)}
               >
-                Saiba mais →
+                {servicesContent.cardLinkLabel}
               </a>
             </article>
           ))}

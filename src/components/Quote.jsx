@@ -1,28 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { getWhatsappUrl } from "../data/company";
+import { quoteContent } from "../data/quote";
 import { services } from "../data/services";
-import { contactContent } from "../data/Contact";
 import "./Quote.css";
 
 const initialForm = {
   name: "",
   phone: "",
-  service: "",
   message: "",
 };
 
-function Quote({ selectedService }) {
+function Quote({ selectedService, onSelectService }) {
   const [formData, setFormData] = useState(initialForm);
-
-  useEffect(() => {
-    if (!selectedService) {
-      return;
-    }
-
-    setFormData((currentForm) => ({
-      ...currentForm,
-      service: selectedService,
-    }));
-  }, [selectedService]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -37,77 +26,68 @@ function Quote({ selectedService }) {
     event.preventDefault();
 
     const whatsappMessage = [
-      "Olá! Gostaria de solicitar um orçamento.",
+      quoteContent.whatsappGreeting,
       `Nome: ${formData.name}`,
       `WhatsApp: ${formData.phone}`,
-      `Interesse: ${formData.service}`,
+      `Interesse: ${selectedService}`,
       formData.message.trim() ? `Mensagem: ${formData.message}` : "",
     ]
       .filter(Boolean)
       .join("\n");
 
-    const whatsappUrl =
-      `${contactContent.whatsappLink}&text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(getWhatsappUrl(whatsappMessage), "_blank", "noopener,noreferrer");
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
-    setFormData({
-      ...initialForm,
-      service: selectedService,
-    });
+    setFormData(initialForm);
   }
 
   return (
     <section className="quote" id="orcamento">
       <div className="quote-inner">
         <div className="quote-copy">
-          <p className="eyebrow">Orçamento rápido</p>
+          <p className="eyebrow">{quoteContent.eyebrow}</p>
 
-          <h2>Conte o que você precisa.</h2>
+          <h2>{quoteContent.title}</h2>
 
-          <p className="quote-description">
-            Preencha os dados abaixo e envie sua solicitação diretamente pelo
-            WhatsApp.
-          </p>
+          <p className="quote-description">{quoteContent.description}</p>
         </div>
 
         <form className="quote-form" onSubmit={handleSubmit}>
           <label className="quote-field">
-            <span>Seu nome</span>
+            <span>{quoteContent.nameLabel}</span>
 
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Como podemos chamar você?"
+              placeholder={quoteContent.namePlaceholder}
               required
             />
           </label>
 
           <label className="quote-field">
-            <span>WhatsApp</span>
+            <span>{quoteContent.phoneLabel}</span>
 
             <input
               type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="(53) 99999-9999"
+              placeholder={quoteContent.phonePlaceholder}
               required
             />
           </label>
 
           <label className="quote-field">
-            <span>Tenho interesse em</span>
+            <span>{quoteContent.serviceLabel}</span>
 
             <select
               name="service"
-              value={formData.service}
-              onChange={handleChange}
+              value={selectedService}
+              onChange={(event) => onSelectService(event.target.value)}
               required
             >
-              <option value="">Selecione uma opção</option>
+              <option value="">{quoteContent.servicePlaceholder}</option>
 
               {services.map((service) => (
                 <option key={service.title} value={service.title}>
@@ -118,19 +98,19 @@ function Quote({ selectedService }) {
           </label>
 
           <label className="quote-field">
-            <span>Mensagem</span>
+            <span>{quoteContent.messageLabel}</span>
 
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Conte brevemente o que você procura."
+              placeholder={quoteContent.messagePlaceholder}
               rows="4"
             />
           </label>
 
           <button className="quote-button" type="submit">
-            Solicitar orçamento
+            {quoteContent.submitLabel}
           </button>
         </form>
       </div>

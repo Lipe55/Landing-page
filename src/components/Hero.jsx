@@ -1,18 +1,16 @@
 import { contactContent } from "../data/Contact";
+import { heroContent } from "../data/hero";
 import "./Hero.css";
 
 function Hero() {
   return (
     <section className="hero" id="inicio">
       <div className="hero-content">
-        <p className="eyebrow">Atendimento de verdade</p>
+        <p className="eyebrow">{heroContent.eyebrow}</p>
 
-        <h1>Sua empresa sempre ao seu lado.</h1>
+        <h1>{heroContent.title}</h1>
 
-        <p className="hero-text">
-          Mais do que um serviço, oferecemos uma experiência completa, com
-          cuidado, atenção e foco no que realmente importa: você.
-        </p>
+        <p className="hero-text">{heroContent.description}</p>
 
         <div className="hero-actions">
           <a
@@ -21,11 +19,11 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            Falar no WhatsApp
+            {heroContent.primaryLabel}
           </a>
 
           <a className="secondary-link" href="#servicos">
-            Conheça nossos serviços
+            {heroContent.secondaryLabel}
           </a>
         </div>
       </div>

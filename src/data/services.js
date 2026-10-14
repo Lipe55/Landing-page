@@ -1,3 +1,11 @@
+export const servicesContent = {
+  eyebrow: "Nossos serviços",
+  title: "Soluções para o seu dia a dia.",
+  description:
+    "Oferecemos soluções pensadas para atender você com praticidade, qualidade e um atendimento próximo.",
+  cardLinkLabel: "Saiba mais →",
+};
+
 export const services = [
   {
     title: "Atendimento personalizado",
